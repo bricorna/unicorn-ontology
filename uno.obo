@@ -1,0 +1,87 @@
+format-version: 1.2
+data-version: releases/2016-08-09
+remark: Unicorn ontology
+import: http://purl.obolibrary.org/obo/uno/imports/bfo_import.owl
+import: http://purl.obolibrary.org/obo/uno/imports/eco_import.owl
+import: http://purl.obolibrary.org/obo/uno/imports/envo_import.owl
+import: http://purl.obolibrary.org/obo/uno/imports/hsapdv_import.owl
+import: http://purl.obolibrary.org/obo/uno/imports/pato_import.owl
+ontology: uno
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000002>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/BFO_0000003>))\nDeclaration(Class(<http://purl.obolibrary.org/obo/UNO_00000000>))\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000002> (continuant)\n\nSubClassOf(<http://purl.obolibrary.org/obo/BFO_0000002> owl:Thing)\n\n# Class: <http://purl.obolibrary.org/obo/BFO_0000003> (occurrent)\n\nSubClassOf(<http://purl.obolibrary.org/obo/BFO_0000003> owl:Thing)\n\n# Class: <http://purl.obolibrary.org/obo/UNO_00000000> (uno)\n\nSubClassOf(<http://purl.obolibrary.org/obo/UNO_00000000> owl:Thing)\n\n\n)
+
+[Term]
+id: BFO:0000004 ! independent continuant
+is_a: BFO:0000002 ! continuant
+
+[Term]
+id: BFO:0000015 ! process
+is_a: BFO:0000003 ! occurrent
+
+[Term]
+id: BFO:0000040 ! material entity
+is_a: BFO:0000004 ! independent continuant
+
+[Term]
+id: CHEBI:24431 ! chemical entity
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: GO:0008150 ! biological_process
+is_a: BFO:0000015 ! process
+
+[Term]
+id: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000465 ! material anatomical entity
+
+[Term]
+id: UBERON:0000062 ! organ
+is_a: UBERON:0010000 ! multicellular anatomical structure
+
+[Term]
+id: UBERON:0000171 ! respiration organ
+is_a: UBERON:0000062 ! organ
+
+[Term]
+id: UBERON:0000465 ! material anatomical entity
+is_a: BFO:0000040 ! material entity
+is_a: UBERON:0001062 ! anatomical entity
+
+[Term]
+id: UBERON:0001062 ! anatomical entity
+is_a: BFO:0000004 ! independent continuant
+
+[Term]
+id: UBERON:0002048 ! lung
+is_a: UBERON:0000171 ! respiration organ
+is_a: UBERON:0004119 ! endoderm-derived structure
+is_a: UBERON:0005178 ! thoracic cavity element
+is_a: UBERON:0015212 ! lateral structure
+
+[Term]
+id: UBERON:0004119 ! endoderm-derived structure
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0005177 ! trunk region element
+is_a: UBERON:0000062 ! organ
+
+[Term]
+id: UBERON:0005178 ! thoracic cavity element
+is_a: UBERON:0005181 ! thoracic segment organ
+
+[Term]
+id: UBERON:0005181 ! thoracic segment organ
+is_a: UBERON:0005177 ! trunk region element
+
+[Term]
+id: UBERON:0010000 ! multicellular anatomical structure
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UBERON:0015212 ! lateral structure
+is_a: UBERON:0000061 ! anatomical structure
+
+[Term]
+id: UNO:00000000
+name: uno
+
