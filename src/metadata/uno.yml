@@ -1,0 +1,27 @@
+# PURL configuration for http://purl.obolibrary.org/obo/uno
+
+idspace: UNO
+base_url: /obo/uno
+
+products:
+- uno.owl: https://raw.githubusercontent.com/bricorna/master/uno.owl
+- uno.obo: https://raw.githubusercontent.com/bricorna/master/uno.obo
+
+term_browser: ontobee
+example_terms:
+- UNO_0000000
+
+entries:
+
+- prefix: /releases/
+  replacement: https://raw.githubusercontent.com/bricorna/uno/v
+
+- prefix: /tracker/
+  replacement: https://github.com/bricorna/uno/issues
+
+- prefix: /about/
+  replacement: http://www.ontobee.org/ontology/UNO?iri=http://purl.obolibrary.org/obo/
+
+## generic fall-through, serve direct from github by default
+- prefix: /
+  replacement: https://raw.githubusercontent.com/bricorna/uno/master/
